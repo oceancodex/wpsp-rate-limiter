@@ -1,15 +1,15 @@
 {
 	"name": "oceancodex/wpsp-rate-limiter",
-	"version": "8.2.0",
+	"version": "8.3.0",
 	"description": "WordPress Starter Plugin - Rate Limiter",
 	"keywords": [
 	],
 	"license": "MIT",
 	"require": {
-		"php": "^8.2",
-		"symfony/cache": "^v7.1.3",
-		"symfony/rate-limiter": "^v7.1.1",
-		"oceancodex/wpsp-core": "^8.2.0"
+		"php": "^8.3",
+		"symfony/cache": "^v7.3.2",
+		"symfony/rate-limiter": "^v7.3.2",
+		"oceancodex/wpsp-core": "^8.3.0"
 	},
 	"config": {
 		"sort-packages": true
