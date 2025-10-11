@@ -16,17 +16,17 @@ class RateLimiter extends BaseInstances {
 	/**
 	 * @var DoctrineDbalAdapter|FilesystemAdapter|MemcachedAdapter|RedisAdapter|null $adapter
 	 */
-	protected mixed   $adapter          = null;
-	protected ?array  $limiters         = null;
-	protected ?string $key              = null;
-	protected ?string $store            = null;
-	protected ?array  $connectionParams = null;
+	protected $adapter          = null;
+	protected $limiters         = null;
+	protected $key              = null;
+	protected $store            = null;
+	protected $connectionParams = null;
 
 	/*
 	 *
 	 */
 
-	public function prepare(): ?self {
+	public function prepare() {
 		$configs = $this->funcs->_config('rate-limiter');
 		if (!$this->adapter) {
 			$this->adapter = (new Adapter(
@@ -48,7 +48,7 @@ class RateLimiter extends BaseInstances {
 	 *
 	 */
 
-	public function global(): void {
+	public function global() {
 		$globalRateLimiter = $this->funcs->_getAppShortName();
 		$globalRateLimiter = $globalRateLimiter . '_rate_limiter';
 		global ${$globalRateLimiter};
@@ -59,11 +59,11 @@ class RateLimiter extends BaseInstances {
 	 *
 	 */
 
-	public function setKey($key = null): void {
+	public function setKey($key = null) {
 		if ($key) $this->key = $key;
 	}
 
-	public function getKey(): ?string {
+	public function getKey() {
 		return $this->key ?? $this->request->getClientIp();
 	}
 
