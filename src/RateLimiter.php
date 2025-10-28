@@ -11,11 +11,11 @@ use Symfony\Component\RateLimiter\Storage\CacheStorage;
 use WPSPCORE\Base\BaseInstances;
 use WPSPCORE\Cache\Adapter;
 
+/**
+ * @property DoctrineDbalAdapter|FilesystemAdapter|MemcachedAdapter|RedisAdapter|null $adapter
+ */
 class RateLimiter extends BaseInstances {
 
-	/**
-	 * @var DoctrineDbalAdapter|FilesystemAdapter|MemcachedAdapter|RedisAdapter|null $adapter
-	 */
 	protected $adapter          = null;
 	protected $limiters         = null;
 	protected $key              = null;
@@ -59,12 +59,12 @@ class RateLimiter extends BaseInstances {
 	 *
 	 */
 
-	public function setKey($key = null) {
-		if ($key) $this->key = $key;
-	}
-
 	public function getKey() {
 		return $this->key ?? $this->request->getClientIp();
+	}
+
+	public function setKey($key = null) {
+		if ($key) $this->key = $key;
 	}
 
 }
