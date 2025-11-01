@@ -53,6 +53,7 @@ class RateLimiter extends BaseInstances {
 		$globalRateLimiter = $globalRateLimiter . '_rate_limiter';
 		global ${$globalRateLimiter};
 		${$globalRateLimiter} = $this;
+		return $this;
 	}
 
 	/*
