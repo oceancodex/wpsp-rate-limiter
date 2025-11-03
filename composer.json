@@ -9,7 +9,7 @@
 		"php": "^8.0",
 		"symfony/cache": "^v5.4.46",
 		"symfony/rate-limiter": "^v6.0.19",
-		"oceancodex/wpsp-core": "^8.0.0"
+		"oceancodex/wpsp-cache": "^8.0.0"
 	},
 	"config": {
 		"sort-packages": true
