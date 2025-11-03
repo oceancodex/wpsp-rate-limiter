@@ -28,19 +28,22 @@ class RateLimiter extends BaseInstances {
 
 	public function prepare() {
 		$configs = $this->funcs->_config('rate-limiter');
-		if (!$this->adapter) {
-			$this->adapter = (new Adapter(
-				$this->funcs->_getMainPath(),
-				$this->funcs->_getRootNamespace(),
-				$this->funcs->_getPrefixEnv()
-			))->init($this->store, $this->connectionParams);
-		}
+
+//		if (!$this->adapter) {
+//			$this->adapter = (new Adapter(
+//				$this->funcs->_getMainPath(),
+//				$this->funcs->_getRootNamespace(),
+//				$this->funcs->_getPrefixEnv()
+//			))->init($this->store, $this->connectionParams);
+//		}
+
 		foreach ($configs as $configKey => $configData) {
 			$this->limiters[$configKey] = (new RateLimiterFactory(
 				$configData,
 				new CacheStorage($this->adapter)
 			))->create($this->getKey());
 		}
+
 		return $this;
 	}
 
