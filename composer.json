@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "^8.4",
-		"symfony/cache": "^v7.3.2",
+		"symfony/cache": "^v7.3.5",
 		"symfony/rate-limiter": "^v7.3.2",
 		"oceancodex/wpsp-cache": "^8.4.0"
 	},
